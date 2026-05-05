@@ -6,7 +6,9 @@
 
 ## What is Nuxfonics?
 
-Nuxfonics is a **deterministic phonetic writing system** designed to encode spoken language as both everyday written communication and structured, machine-readable data using only standard keyboard characters.
+Nuxfonics is a **deterministic phonetic writing system** designed to encode spoken language as both intuitive written communication and structured, machine-readable data. Utilizing only standard QWERTY characters, it eliminates the "graphic debt" of traditional phonetic alphabets (like IPA) to serve as a universal, keyboard-native standard.
+
+By establishing this high-fidelity encoding standard, Nuxfonics functions as a complete International Phonetic Alphabet (IFA) for global every day use, legacy-free usage.
 
 It enables:
 - Consistent phonetic representation  
