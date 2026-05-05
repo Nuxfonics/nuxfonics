@@ -1,12 +1,13 @@
-# Nuxfonics™  
-### The Deterministic Phonetic Engine  
-**IFA — Inteynasyonoyl Fonetic Lanygryij** (Nuxfonics Encoding)
+# Nuxfonics  
+A practical phonetic encoding system for global real-world use
 
 ---
 
-## What is Nuxfonics?
+## What is Nuxfonics™?
 
-Nuxfonics is a **deterministic phonetic writing system** designed to encode spoken language as both everyday written communication and structured, machine-readable data using only standard keyboard characters.
+Nuxfonics is a deterministic phonetic writing system that converts spoken language into consistent, keyboard-friendly text that both humans and AI can read and reproduce accurately.
+
+It is designed for everyday use, written communication, and structured machine-readable data. Using only standard QWERTY characters, it reduces the inconsistency found in traditional phonetic systems (such as IPA) and provides a keyboard-native alternative for representing speech.
 
 It enables:
 - Consistent phonetic representation  
@@ -15,7 +16,11 @@ It enables:
 - Cross-language pronunciation recovery  
 - Full keyboard compatibility for global usage
 - Compatible with existing languages. Can be easily mixed   
- 
+
+Origin of the name
+
+Nuxfonics™ = “New Phonics” written in Nuxfonics. 
+
 ---
 
 ## Core Architectural Principles
@@ -155,6 +160,16 @@ Used to measure:
 📘 Specification evolving  
 🌐 Public reference: https://nuxfonics.org  
 
+---
+## Repository Structure
+
+To navigate the **Nuxfonics™** engine and the **IFA** standards, use the following directory map:
+```text
+ ├── ai_code/            # Deterministic AI scripts and the [LOGIC_PIPELINE]
+ ├── dictionaries/       # Phonetic word mappings for English, and other languages
+ ├── docs/               # Technical specs for the 19x4 Sound Grid and UWSE scale
+ └── README.md           # Core project specifications and architectural pillars
+```
 ---
 
 ## Contributing
