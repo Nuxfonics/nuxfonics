@@ -159,12 +159,12 @@ Used to measure:
 ## Repository Structure
 
 To navigate the **Nuxfonics™** engine and the **IFA** standards, use the following directory map:
-
-- ├── ai_code/            # Deterministic AI scripts and the [LOGIC_PIPELINE]
-- ├── dictionaries/       # Phonetic word mappings for English, and other languages
-- ├── docs/               # Technical specs for the 19x4 Sound Grid and UWSE scale
-- └── README.md           # Core project specifications and architectural pillars
-
+```text
+ ├── ai_code/            # Deterministic AI scripts and the [LOGIC_PIPELINE]
+ ├── dictionaries/       # Phonetic word mappings for English, and other languages
+ ├── docs/               # Technical specs for the 19x4 Sound Grid and UWSE scale
+ └── README.md           # Core project specifications and architectural pillars
+```
 ---
 
 ## Contributing
