@@ -1,0 +1,149 @@
+				
+The Nuxfonics 19x4 Phoneme Sound Grid				
+				
+TIER Level:	T0 only			
+# [BASE_LETTER_SOUNDS]  				
+# Y_AXIS = NULL. 				
+# IDENTITY 	IPA	sound notes 	examples [sound of interest]	
+a 	/æ/      	short 'a' vowel	c[a]t; h[a]t	
+b 	/b/      	voiced bilabial stop 	[b]ox; [b]ag	
+c 	/k/      	voiceless velar stop 	[c]at; [c]up; [k]ite	
+d 	/d/      	voiced alveolar stop 	[d]og; [d]ay	
+e 	/ɛ/      	'eh' vowel 	b[e]d; s[e]t; m[e]t	
+f 	/f/      	voiceless labiodental fricative 	[f]at; [f]ox	
+g 	/ɡ/      	voiced velar stop 	[g]ap; [g]et	
+h 	/h/      	voiceless glottal fricative 	[h]at; [h]op	
+i 	/ɪ/      	short 'ih' vowel 	s[i]t; f[i]n	
+j 	/dʒ/     	voiced postalveolar affricate 	[j]am; [j]ob	
+l 	/l/      	voiced alveolar lateral approximant 	[l]ap; [l]ot	
+m 	/m/      	voiced bilabial nasal 	[m]ap; [m]op	
+n 	/n/      	voiced alveolar nasal 	[n]at; [n]ot	
+o 	/ɒ/; /ɑ/ 	short 'o' vowel (varies by accent) 	[o]t; c[o]t; p[o]t	
+p 	/p/      	voiceless bilabial stop 	[p]at; [p]ot	
+r 	/r/      	voiced alveolar approximant 	[r]at; [r]ot	
+s 	/s/      	voiceless alveolar fricative 	[s]at; [s]on	
+t 	/t/      	voiceless alveolar stop 	[t]ap; [t]op	
+u 	/ʌ/; /ə/ 	'uh' vowel group 	c[u]p; [a]bout	
+				
+TIER Level:	T0+T1			
+# [X_MODIFIER_SOUNDS]  				
+# Y_AXIS = x.  				
+# IDENTITY 	IPA	sound notes 	examples [sound of interest]	
+ax 	/eɪ/           	long 'a' vowel (diphthong) 	[a]pe; d[a]y	
+bx 	/biː/          	letter-name 'b' sound      	[b]ee	
+cx 	/siː/          	letter-name 'c' sound      	[c]ee	
+dx 	/diː/          	letter-name 'd' sound      	[d]eep	
+ex 	/iː/; /i/      	long 'ee' vowel group      	s[ee]; f[ee]t; rad[i]o	
+fx 	/ɛf/           	letter-name 'f' sound      	[f]BI; eff[ort]	
+gx 	/ɡiː/          	letter-name 'g' sound      	[g]ee	
+hx 	/eɪtʃ/         	letter-name 'h' sound      	[H]2O	
+ix 	/aɪ/           	long 'i' vowel (diphthong) 	[i]ce; l[i]fe	
+jx 	/dʒeɪ/         	letter-name 'j' sound      	[j]ay	
+lx 	/ɛl/           	letter-name 'l' sound      	[L].A.; [L]O[L]	
+mx 	/ɛm/           	letter-name 'm' sound      	[m]ap	
+nx 	/ɛn/           	letter-name 'n' sound      	[n] (en sound)	
+ox 	/oʊ/           	long 'o' vowel (diphthong) 	[o]pen; g[o]; h[o]pe	
+px 	/piː/          	letter-name 'p' sound      	[p]eople	
+rx 	/ɑː/; /a/; /ä/ 	open back 'ah' vowel family 	c[a]r; f[a]r	
+sx 	/ɛs/           	letter-name 's' sound       	S.O.[S]	
+tx 	/tiː/          	letter-name 't' sound       	[t]ea	
+ux 	/juː/          	'you' vowel/glide sound     	[u]se; [y]ou	
+				
+TIER Level:	TO+T1			
+# [Y_MODIFIER_SOUNDS] 				
+# Y_AXIS = y.				
+# IDENTITY 	IPA	sound notes 	examples [sound of interest]	
+ay 	 /aʊ/   	'ow' diphthong vowel            	| c[ow]	
+cy 	 /tʃ/        	'ch' affricate                  	[ch]ip; tea[ch]	
+dy 	 /ʒ/         	'zh' voiced fricative           	plea[su]re	
+ey 	 /ɜːr/       	'er/ir/ur' rhotic vowel group   	h[er]; f[ir]st; b[ur]n	
+fy 	 /v/         	voiced labiodental fricative    	[v]ine; [v]ery	
+iy 	 /ɛə/; /ɪər/ 	'air' vowel group               	[air]; th[ere]; f[ear]; h[ear]	
+jy 	 /j/         	'y' glide consonant             	[y]es	
+ny 	 /ŋ/         	'ng' nasal                      	si[ng]; lo[ng]	
+oy 	 /ɔː/        	'aw/or' vowel group             	l[aw]; m[or]ning; w[a]lk	
+ry 	 /w/         	'w' glide consonant             	[w]et	
+sy 	 /ʃ/         	'sh' fricative                  	[sh]ip	
+ty 	 /ð/;/θ/     	'th' voiceless dental fricative 	[th]in	
+uy 	 /u/; /uː/   	'oo' vowel group                	t[oo]; m[oo]n	
+				
+	T0+T1			
+# [Z_MODIFIER_SOUNDS]  				
+# Y_AXIS = z.				
+# IDENTITY 	IPA	sound notes 	examples [sound of interest]	
+az 	 /oʊ/        	'o/u' vowel diphthong           	[o]ld; [u]ltimate	
+iz 	 /ɔɪ/   	'oy' diphthong vowel            	t[oy]	
+oz 	 /ʊ/    	short 'oo' vowel                	l[oo]k; h[oo]k	
+uz 	 /uː/   	long 'oo' vowel (retracted/grounded variant) 	sch[oo]l; t[oo]l	
+sz 	 /z/    	voiced 'z' fricative            	[z]oo	
+				
+				
+TIER Level:	T2			
+LENGTH phonome				
+Code		Action	description	
+v		Short	Staccato/Cut short	
+w		long	Sustain/Curve extended	
+vw		stressed	slightly shortened; STRESSED	
+wv		stressed	slightly lengthened; STRESSED	
+				
+				
+				
+	T3			
+Texture (q)	IPA	Label	Description 	
+q	ʲ       	nul      	(Palatal/Soft Sign).	
+qx	~ Over / ⁿ 	Front       	Nasal Resonance	
+qy	ˠ / e    	Mid        	Sharp/Bright Resonance	
+qz	(Under) / ʱ	Back           	Breathy/Guttural Resonance	
+qv	ˀ / ʔ    	Staccato	Glottal/Clipped Softener	
+qw	ˤ       	Sustain 	Heavy/Held Resonance	
+				
+				
+				
+TIER Level:	T4			
+ TONE (~) Used for Tonal Languages				
+Code		Type	Acoustic Action	
+~v		Low	Bottom of the register.	Deep/Low frequency.
+~w		High	Top of the register.	High frequency / Energy.
+~x		Rising	Low -> High.	Upward glide.
+~y		Falling	High -> Low.	Downward glide.
+~xy		Mixed	Low-High-High	Complex contour.
+~yx		mixed	High-Low-High.	Complex contour.
+				
+				
+K_FUNCTIONS				
+TIER Level:	K_T1			
+Homophone			Description	
+none			Base or first Word Meaning	
+k			Second Word Meaning	
+kx			Third Word Meaning	
+ky			Forth Word Meaning	
+kz			Fifth Word Meaning	
+				
+				
+TIER Level:	K_T2			
+Length/Stress		Action	Description (same as T2 but at word level)	
+kv		Short	Staccato/Cut short	
+kw		long	Sustain/Curve extended	
+kvw		stressed	slightly shortened; STRESSED	
+kwv		stressed	slightly lengthened; STRESSED	
+				
+				
+	K_T3			
+ Articulation_Modifier (Texture)		Label	Description (same as T3 but at word level)	
+kq		nul      	(Palatal/Soft Sign).	
+kqx		Front       	Nasal Resonance	
+kqy		Mid        	Sharp/Bright Resonance	
+kqz		Back           	Breathy/Guttural Resonance	
+kqv		Staccato	Glottal/Clipped Softener	
+kqw		Sustain 	Heavy/Held Resonance	
+				
+				
+				
+TIER Level:	K_T4			
+Tone		Type	Description (same as T4 but at word level)	
+k~v		Low	Bottom of the register.	Deep/Low frequency.
+k~w		High	Top of the register.	High frequency / Energy.
+k~x		Rising	Low -> High.	Upward glide.
+k~y		Falling	High -> Low.	Downward glide.
+k~xy		Mixed	Low-High-High	Complex contour.
+k~yx		mixed	High-Low-High.	Complex contour.
