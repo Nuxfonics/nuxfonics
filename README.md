@@ -1,6 +1,6 @@
 # Nuxfonics  
 
-A practical phonetic encoding system for global real-world use
+Practical everyday use phonetic encoding system for global real-world languages, using the standard QWERTY keyboard. 
 
 ---
 
@@ -41,9 +41,10 @@ Each cell represents:
 ### 2. Acoustic Priority
 Spelling is **secondary** to sound, ie. words are spelt phonetically.
 
-- Words are encoded based on how they are spoken
-- This creates the stable, predictable spelling.
-- Not based on historical or visual spelling  
+- Words are encoded based on how they are spoken.
+- This creates the stable, predictable phonetic spelling.
+- Not based on historical or visual spelling.
+  
 ---
 
 ### 3. Deterministic Identity
@@ -70,6 +71,8 @@ Nuxfonics uses:
 
 | Operator | Function |
 |--------|--------|
+| `a to u` | The 19 base letters (minus k,q)|
+| `x,y,z` | The determinants for the 19x4 grid|
 | `v, w` | Stress / energy |
 | `q` | Texture (articulation) |
 | `~` | Tone |
@@ -81,7 +84,7 @@ Speech is encoded across multiple dimensions:
 
 | Tier | Function |
 |------|--------|
-| T0–T1 | Core sound identity |
+| T0–T1 | 19x4 Core sound identity |
 | T2 | Length / stress |
 | T3 | Texture (q operator) |
 | T4 | Tone (~ operator) |
@@ -110,8 +113,10 @@ All encoding follows a strict sequence:
 
 | Word | Nuxfonics | Notes |
 |------|----------|------|
-| Knight | nixtk | silent letters removed + ID |
 | Night | nixt | base sound |
+| Knight | nixtk | silent letters removed + ID |
+| Thought | tyoyt | remove over complicated letters |
+| colonel | ceynel | remove redundant letters |
 | Ma (Mandarin) | ma~w | tone encoded |
 
 ---
@@ -133,8 +138,10 @@ Nuxfonics is designed to unify:
 
 This repository contains:
 
-- Core engine rules  
-- Sound grid definitions  
+- Nuxfonics Master Rule Book
+- Core AI engine rules
+- Sound grid definitions
+- Language Dictionaries
 - Evaluation frameworks (UWSE / ULAD)  
 - Test cases for language comparison  
 
@@ -162,7 +169,22 @@ Used to measure:
 🌐 Public reference: https://nuxfonics.org  
 
 ---
+## Repository Structure
 
+To navigate the **Nuxfonics™** engine and the **Nuxfonics** standards, use the following directory map:
+```text
+├── ai_code/                              # Deterministic AI scripts and the [LOGIC_PIPELINE]
+│   └── nuxfonics_ai_init                 # The initialization  code to instruct AI how to read and write in Nuxfonics.
+├── dictionaries/                         # Phonetic word mappings for English, and other languages
+│   └── English/
+│   └── Tagalog/
+│   └── Thai/
+├── docs/                                 # Technical specs for the 19x4 Sound Grid and UWSE scale
+│   └── Nuxfonics_Master_Rule_Book.pdf    # The detailed description of structure and how to use the Nuxfonics Alphabet
+│   └── nuxfonics_quick_ref_alphabet.tsv  # 19x4 phoneme sound grid UTF-8 master grid.
+└── README.md                             # Core project specifications and architectural pillars
+```
+---
 ## Contributing
 
 Contributions are welcome for:
