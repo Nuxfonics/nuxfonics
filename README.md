@@ -8,10 +8,11 @@ Practical everyday use phonetic encoding system for global real-world languages,
 
 Nuxfonics is a deterministic phonetic writing system that converts spoken language into consistent, keyboard-friendly text that both humans and AI can read and reproduce accurately.
 
-It is designed for everyday use, written communication, and structured machine-readable data. Using only standard QWERTY characters, it reduces the inconsistency found in traditional phonetic systems (such as IPA) and provides a keyboard-native alternative for representing speech.
+It is designed for everyday use, written communication, and structured machine-readable data. Using only standard 26 ASCII QWERTY characters, it reduces the inconsistency found in traditional phonetic systems (such as IPA) and provides a keyboard-native alternative for representing speech.
 
 It enables:
-- Consistent phonetic representation  
+- Consistent phonetic representation
+- Case inseitive charactores.  The letter case does not affect the sound. 
 - Practical everyday use in real-world environments  
 - AI-compatible text processing  
 - Cross-language pronunciation recovery  
@@ -173,12 +174,18 @@ Used to measure:
 
 To navigate the **Nuxfonics™** engine and the **Nuxfonics** standards, use the following directory map:
 ```text
+Base URL github.com/Nuxfonics/nuxfonics/
+
 ├── ai_code/                              # Deterministic AI scripts and the [LOGIC_PIPELINE]
 │   └── nuxfonics_ai_init                 # The initialization  code to instruct AI how to read and write in Nuxfonics.
 ├── dictionaries/                         # Phonetic word mappings for English, and other languages
-│   └── English/
-│   └── Tagalog/
-│   └── Thai/
+│   └── English_dict.tsv                  # The  word dictionary
+│   └── English_info.tsv                  # The language specific grid mappings
+│   └── Tagalog
+│   └── Tagalog_dict.tsv
+│   └── Tagalog_info.tsv
+│   └── Thai_dict.tsv
+│   └── Thai_info.tsv
 ├── docs/                                 # Technical specs for the 19x4 Sound Grid and UWSE scale
 │   └── Nuxfonics_Master_Rule_Book.pdf    # The detailed description of structure and how to use the Nuxfonics Alphabet
 │   └── nuxfonics_quick_ref_alphabet.tsv  # 19x4 phoneme sound grid UTF-8 master grid.
@@ -198,3 +205,74 @@ Contributions are welcome for:
 ## License
 
 (To be defined)
+
+
+## The Nuxfonic™ Master Sound Grid (19x4)
+
+This matrix defines the 76 unique acoustic coordinates. Every Sound Unit is constructed from a mandatory Base Letter (T0) followed by a Determinant (T1).
+
+| Base | T0 (Null) | T1 (x) | T1 (y) | T1 (z) |
+| :--- | :--- | :--- | :--- | :--- |
+| **a** | /æ/ (cat) | /eɪ/ (ape) | /aʊ/ (cow) | /oʊ/ (old) |
+| **b** | /b/ (box) | /biː/ (bee) | -- | -- |
+| **c** | /k/ (cat) | /siː/ (see) | /tʃ/ (chip) | -- |
+| **d** | /d/ (dog) | /diː/ (deep) | /ʒ/ (pleasure) | -- |
+| **e** | /ɛ/ (bed) | /iː/ (seek) | /ɜːr/ (her) | -- |
+| **f** | /f/ (fat) | /ɛf/ (FBI) | /v/ (vine) | -- |
+| **g** | /ɡ/ (gap) | /ɡiː/ (geep) | -- | -- |
+| **h** | /h/ (hat) | /eɪtʃ/ (H2O) | -- | -- |
+| **i** | /ɪ/ (sit) | /aɪ/ (ice) | /ɛə/ (air) | /ɔɪ/ (toy) |
+| **j** | /dʒ/ (jam) | /dʒeɪ/ (jay) | /j/ (yes) | -- |
+| **l** | /l/ (lap) | -- | -- | -- |
+| **m** | /m/ (map) | /ɛm/ (empty) | -- | -- |
+| **n** | /n/ (net) | /ɛn/ (enter) | /ŋ/ (sing) | -- |
+| **o** | /ɒ/ (lot) | /oʊ/ (open) | /ɔː/ (law) | /ʊ/ (look) |
+| **p** | /p/ (pat) | /piː/ (people) | -- | -- |
+| **r** | /r/ (rat) | /ɑː/ (car) | /w/ (wet) | -- |
+| **s** | /s/ (sat) | /ɛs/ (SOS) | /ʃ/ (ship) | /z/ (zoo) |
+| **t** | /t/ (tap) | /tiː/ (tea) | /ð/ (thin) | -- |
+| **u** | /ʌ/ (cup) | /juː/ (use) | /u/ (too) | /uː/ (tool) |
+
+**Note:** Reserved characters(determinants) `k, q, v, w, x, y, z, ~` are used exclusively for meta-functions and hierarchical extensions.
+
+## The Nuxfonic™ Tier structure 
+
+```text
+[ BASE SOUND ] + [ T1: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
+      (s)             (x)                 (w)                   (qx)              (~x)
+```
+
+## TIER Level:	T2 
+LENGTH phonome	
+
+|Code	|	Action | description	|
+|------|----------|------|
+| v		|Short	|Staccato/Cut short	|
+|w		|long	|Sustain/Curve extended	|
+|vw		|stressed	|slightly shortened; STRESSED	|
+|wv		|stressed	|slightly lengthened; STRESSED	|
+
+
+## TIER Level:	T3			
+
+|code Texture (q)	|IPA	|Label	|Description 	|
+|------|----------|------|-----|
+|q	|ʲ       	|nul      	|(Palatal/Soft Sign).	|
+|qx	|~ Over / ⁿ 	|Front       	|Nasal Resonance|	
+|qy |ˠ / e    	|Mid        	|Sharp/Bright Resonance	|
+|qz |(Under) / ʱ	|Back           	|Breathy/Guttural Resonance	|
+|qv	|ˀ / ʔ    	|Staccato	|Glottal/Clipped Softener	|
+|qw	|ˤ       	|Sustain 	|Heavy/Held Resonance	|
+				
+				
+				
+## TIER Level:	T4			
+ TONE (~) Used for Tonal Languages				
+|Code		|Type	|Acoustic |Action	|
+|------|------|---------|-----|
+|~v		|Low	|Bottom of the register.	|Deep/Low frequency.|
+|~w		|High	|Top of the register.	|High frequency / Energy.|
+|~x		|Rising	|Low -> High.	|Upward glide.|
+|~y		|Falling	|High -> Low.	|Downward glide.|
+|~xy		|Mixed	|Low-High-High	|Complex contour.|
+|~yx		|Mixed	|High-Low-High.	|Complex contour.|
