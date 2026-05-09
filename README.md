@@ -1,6 +1,6 @@
 # Nuxfonics  
 
-Practical everyday use phonetic encoding system for global real-world languages, using the standard QWERTY keyboard. 
+Practical everyday use phonetic encoding system for global real-world languages, using the standard 26 letter QWERTY keyboard. 
 
 ---
 
@@ -8,7 +8,7 @@ Practical everyday use phonetic encoding system for global real-world languages,
 
 Nuxfonics is a deterministic phonetic writing system that converts spoken language into consistent, keyboard-friendly text that both humans and AI can read and reproduce accurately.
 
-It is designed for everyday use, written communication, and structured machine-readable data. Using only standard 26 ASCII QWERTY characters, it reduces the inconsistency found in traditional phonetic systems (such as IPA) and provides a keyboard-native alternative for representing speech.
+It is designed for everyday use, written communication, and structured machine-readable data. Using only standard 26 ASCII characters + the `~` character, this provides a keyboard-native alternative for representing speech that can be read and written on any device. Nuxfonics removes the inconsistency found in traditional phonetic systems such as IPA, which need special keyboards and input methods, with special fonts required for display.
 
 It enables:
 - Consistent phonetic representation
@@ -17,7 +17,9 @@ It enables:
 - AI-compatible text processing  
 - Cross-language pronunciation recovery  
 - Full keyboard compatibility for global usage
-- Compatible with existing languages. Can be easily mixed   
+- Compatible with existing languages. Can be easily mixed.    
+
+This results in a Universal Phonetic Writing System that all devices can use.  
 
 Origin of the name
 
@@ -177,7 +179,7 @@ To navigate the **Nuxfonics™** engine and the **Nuxfonics** standards, use the
 Base URL github.com/Nuxfonics/nuxfonics/
 
 ├── ai_code/                              # Deterministic AI scripts and the [LOGIC_PIPELINE]
-│   └── nuxfonics_ai_init                 # The initialization  code to instruct AI how to read and write in Nuxfonics.
+│   └── nuxfonics_ai_init.txt             # The initialization  code to instruct AI how to read and write in Nuxfonics.
 ├── dictionaries/                         # Phonetic word mappings for English, and other languages
 │   └── English_dict.tsv                  # The  word dictionary
 │   └── English_info.tsv                  # The language specific grid mappings
@@ -206,6 +208,7 @@ Contributions are welcome for:
 
 (To be defined)
 
+---
 
 ## The Nuxfonic™ Master Sound Grid (19x4)
 
@@ -223,7 +226,7 @@ This matrix defines the 76 unique acoustic coordinates. Every Sound Unit is cons
 | **h** | /h/ (hat) | /eɪtʃ/ (H2O) | -- | -- |
 | **i** | /ɪ/ (sit) | /aɪ/ (ice) | /ɛə/ (air) | /ɔɪ/ (toy) |
 | **j** | /dʒ/ (jam) | /dʒeɪ/ (jay) | /j/ (yes) | -- |
-| **l** | /l/ (lap) | -- | -- | -- |
+| **l** | /l/ (lap) | /ɛl/ (tell)-- | -- | -- |
 | **m** | /m/ (map) | /ɛm/ (empty) | -- | -- |
 | **n** | /n/ (net) | /ɛn/ (enter) | /ŋ/ (sing) | -- |
 | **o** | /ɒ/ (lot) | /oʊ/ (open) | /ɔː/ (law) | /ʊ/ (look) |
@@ -238,12 +241,22 @@ This matrix defines the 76 unique acoustic coordinates. Every Sound Unit is cons
 ## The Nuxfonic™ Tier structure 
 
 ```text
-[ BASE SOUND ] + [ T1: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
-      (s)             (x)                 (w)                   (qx)              (~x)
+The complete phoneme construction.  An array of phonemes create a base word.
+
+[ T0: BASE SOUND ] + [ T1: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
+      (s)                (x)                 (w)                   (qx)               (~x)
+
+K_FUNCTION
+This is the special word level control functions. It is donated by the `k` determinant character.
+The K Function is always place at the end of the base word. Each word can only have one of each of the optional k_function Tier levels.
+
+BASE_WORD + [ KT0: K marker  + [ KT1: WORD HOMOPHONE ]] + [ Inflectional suffixes (T0-4) ] + [ KT0: K marker  +  [ T2: WORD LENGTH/STRESS ] + [ T3: WORD TEXTURE ] + [ T4: WORD TONE ]]
+                  (k)                 y                            -ing                             kw                         q                        ~v
+
 ```
 
 ## TIER Level:	T2 
-LENGTH phonome	
+LENGTH / STRESS of phoneme	
 
 |Code	|	Action | description	|
 |------|----------|------|
@@ -253,7 +266,8 @@ LENGTH phonome
 |wv		|stressed	|slightly lengthened; STRESSED	|
 
 
-## TIER Level:	T3			
+## TIER Level:	T3	
+TEXTURE of phoneme
 
 |code Texture (q)	|IPA	|Label	|Description 	|
 |------|----------|------|-----|
@@ -265,9 +279,9 @@ LENGTH phonome
 |qw	|ˤ       	|Sustain 	|Heavy/Held Resonance	|
 				
 				
-				
 ## TIER Level:	T4			
- TONE (~) Used for Tonal Languages				
+TONE (~) Used for Tonal Languages	
+ 
 |Code		|Type	|Acoustic |Action	|
 |------|------|---------|-----|
 |~v		|Low	|Bottom of the register.	|Deep/Low frequency.|
@@ -276,3 +290,45 @@ LENGTH phonome
 |~y		|Falling	|High -> Low.	|Downward glide.|
 |~xy		|Mixed	|Low-High-High	|Complex contour.|
 |~yx		|Mixed	|High-Low-High.	|Complex contour.|
+
+## K_FUNCTION Tiers  K_T
+These are word level controls. These are placed at the end of the base word.
+
+## TIER Level:	K_T1			
+
+|Homophone	|Description	|
+|----------|--------|
+|none		|Base or first Word Meaning	|
+|k			|Second Word Meaning	|
+|kx			|Third Word Meaning	|
+|ky			|Forth Word Meaning	|
+|kz			|Fifth Word Meaning	|
+
+
+## TIER Level:	K_T3	
+TEXTURE at whole word.  (same as T3 but at word level)	
+
+| code (Texture)	|	Label	|Description |
+|-------|------|--------|
+|kq		|nul      	|(Palatal/Soft Sign).	|
+|kqx	|Front       |	Nasal Resonance	|
+|kqy	|Mid        	|Sharp/Bright Resonance	|
+|kqz	|Back           |	Breathy/Guttural Resonance	|
+|kqv	|Staccato	|Glottal/Clipped Softener	|
+|kqw	|Sustain 	|Heavy/Held Resonance	|
+
+
+## TIER Level:	K_T4			
+TONE at word level.  (same as T4 but at word level)
+
+|Tone		|Type	|Acoustic |Action	|
+|-------|------|----|----|
+|k~v		|Low	|Bottom of the register.	|Deep/Low frequency.|
+|k~w		|High	|Top of the register.	|High frequency / Energy.|
+|k~x		|Rising	|Low -> High.	|Upward glide.|
+|k~y		|Falling	|High -> Low.	|Downward glide.|
+|k~xy		|Mixed	|Low-High-High	|Complex contour.|
+|k~yx		|mixed	|High-Low-High.	|Complex contour.|
+
+
+
