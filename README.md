@@ -283,7 +283,7 @@ The complete phoneme construction.  An array of phonemes create a base word.
       (s)                (x)                 (w)                   (qx)               (~x)
 
 K_FUNCTION
-This is the special word level control functions. It is donated by the `k` determinant character.
+This is the special word level control functions. It is denoted by the `k` determinant character.
 The K Function is always place at the end of the base word. Each word can only have one of each of the optional k_function Tier levels.
 
 BASE_WORD + [ KT0: K marker  + [ KT1: WORD HOMOPHONE ]] + [ Inflectional suffixes (T0-4) ] + [ KT0: K marker  +  [ T2: WORD LENGTH/STRESS ] + [ T3: WORD TEXTURE ] + [ T4: WORD TONE ]]
