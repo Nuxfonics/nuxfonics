@@ -13,7 +13,7 @@ It is designed for everyday use, written communication, and structured machine-r
 
 It enables:
 - Consistent phonetic representation
-- Case inseitive charactores.  The letter case does not affect the sound. 
+- Case insensitive characters.  The letter case does not affect the sound. 
 - Practical everyday use in real-world environments  
 - AI-compatible text processing  
 - Cross-language pronunciation recovery  
@@ -110,7 +110,7 @@ Nuxfonics uses:
 
 | Operator | Function |
 |--------|--------|
-| `a to u` | The 19 base letters (minus k,q)|
+| `a to u` (excluding `k`,`q`) |  Defines the 19 (T0) base letters |
 | `x,y,z` | The determinants for the 19x4 grid|
 | `v, w` | Stress / energy |
 | `q` | Texture (articulation) |
@@ -119,19 +119,38 @@ Nuxfonics uses:
 
 ---
 ### 6. Multi-Axis Encoding
-Speech is encoded across multiple dimensions:
+Speech is encoded across multiple dimensions: 
+
+Only the tiers required for a given phonetic representation are used; unused tiers are omitted from the final encoded form.
 
 | Tier | Function |
 |------|--------|
-| T0–T1 | 19x4 Core sound identity |
-| T2 | Length / stress |
-| T3 | Texture (q operator) |
-| T4 | Tone (~ operator) |
-| KT | Meaning / identity resolution |
+| `T0–T1` | 19x4 Core sound identity |
+| `T2` | Length / stress |
+| `T3` | Texture (q operator) |
+| `T4` | Tone (~ operator) |
+| `KT` | Meaning / identity resolution |
 
 → Creates a **high-resolution speech model**
 
 ---
+
+## Parsing and Encoding Stack
+
+```text
+INPUT TEXT
+   ↓
+PHONEME SEGMENTATION      (T0T1 sound identity using the T0 delimiter rule)
+   ↓
+T2–T4 PHONEME MODIFIERS   (length, texture, tone)
+   ↓
+BASE WORD CONSTRUCTION    (array of phonemes)
+   ↓
+K_FUNCTION PROCESSING     (word-level modifiers and homophone resolution)
+   ↓
+FINAL NUXFONICS OUTPUT
+```
+
 ## Logic Pipeline
 
 All encoding follows a strict sequence:
@@ -296,10 +315,10 @@ LENGTH / STRESS of phoneme
 
 |Code	|	Action | description	|
 |------|----------|------|
-| v		|Short	|Staccato/Cut short	|
-|w		|long	|Sustain/Curve extended	|
-|vw		|stressed	|slightly shortened; STRESSED	|
-|wv		|stressed	|slightly lengthened; STRESSED	|
+| v	   |Short	|Staccato/Cut short	|
+| w	   |long	|Sustain/Curve extended	|
+| vw   |stressed	|slightly shortened; STRESSED	|
+| wv   |stressed	|slightly lengthened; STRESSED	|
 
 
 ## TIER Level:	T3	
