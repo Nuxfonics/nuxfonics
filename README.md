@@ -411,7 +411,8 @@ While the 19×4 **2D Phoneme Grid** provides the practical writing foundation of
 This layer expands the 76 Master Sound Cells into a structured phonetic coordinate space containing  **247 unique sound units**, providing a practical ASCII alternative to large IPA and X-SAMPA inventories.
 
 
-The complete phoneme construction. 2D and 3D 
+The complete 2D and 3D grid phoneme construction:
+
 **The 2D 19x4 Grid**  standard grid size 76 phoneme/sound locations.
 ```text
 [ T0: BASE SOUND ] + [ T1: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
