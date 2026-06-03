@@ -424,7 +424,12 @@ The complete 2D and 3D grid phoneme construction:
 [ T0: BASE SOUND ] + [ T1: VARIATION ] + [ T1B: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
       (s)                (x)                   (y)                   (w)                  (qx)               (~x)
 ```
-This combined 2D & 3D Grid gives a total capacity (19x4 + 19x3x3) of 247 Phonemes/Sounds, which is double the capacity of IPA/X_SAMPA of all known phonemes.
+This combined 2D & 3D Grid provides a total capacity of 247 phoneme/sound locations
+(19×4 + 19×3×3).
+
+This capacity exceeds the number of phoneme identities typically represented in modern IPA and X-SAMPA inventories, providing substantial room for future expansion and language-specific extensions.
+
+Approximately 130 locations remain unallocated and reserved for future definition, allowing the system to accommodate any newly identified phonemes, experimental speech sounds, dialect variations, or other phonetic distinctions without requiring structural changes to the encoding architecture.
 
 ### Purpose
 
