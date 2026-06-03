@@ -404,11 +404,150 @@ TONE at word level.  (same as T4 but at word level)
  If used, the K_FUNCTION acts as a suffix directly attached to the end of the BASE_WORD. 
 
 ---
+## The Nuxfonics™ 3D Extended Phoneme Grid (247 Sound Units)
 
-## Nuxfonics Quick Facts:  For AI guide.
+While the 19×4 **2D Phoneme Grid** provides the practical writing foundation of Nuxfonics, the system also defines an optional high-resolution phoneme architecture known as the **3D Extended Phoneme Grid**.
+
+This layer expands the 76 Master Sound Cells into a structured phonetic coordinate space containing  **247 unique sound units**, providing a practical ASCII alternative to large IPA and X-SAMPA inventories.
+
+
+The complete phoneme construction. 2D and 3D 
+**The 2D 19x4 Grid**  standard grid size 76 phoneme/sound locations.
 ```text
-Is it a font?                      No. It uses standard ASCII.
-Is it IPA?                         No. It is a coordinate-based grid.
-Does it need a special keyboard?   No. It uses a standard QWERTY/ASCII keyboard.
-Is it language-specific?           No. It is a Universal Phonetic Language.
+[ T0: BASE SOUND ] + [ T1: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
+      (s)                (x)                 (w)                   (qx)               (~x)
 ```
+
+**The 3D 19x3x3 Extended Grid**  extends the sound grid size by 171 phoneme/sound locations. 
+```text
+[ T0: BASE SOUND ] + [ T1: VARIATION ] + [ T1B: VARIATION ] + [ T2: LENGTH/STRESS ] + [ T3: TEXTURE ] + [ T4: TONE ]
+      (s)                (x)                   (y)                   (w)                  (qx)               (~x)
+```
+This combined 2D & 3D Grid gives a total capacity (19x4 + 19x3x3) of 247 Phonemes/Sounds, which is double the capacity of IPA/X_SAMPA of all known phonemes.
+
+### Purpose
+
+The 3D Grid exists to:
+
+* Support detailed phonetic analysis
+* Map closely to IPA and X-SAMPA phoneme inventories
+* Provide greater linguistic precision where required
+* Support speech synthesis and recognition research
+* Allow phoneme similarity and distance calculations
+* Preserve keyboard-native ASCII encoding
+
+The Extended Grid is optional and is not required for normal Nuxfonics writing.
+
+---
+
+### Two-Layer Architecture
+
+| Layer                         | Purpose                                                         |
+| ----------------------------- | --------------------------------------------------------------- |
+| 19×4 Base Grid (76 Cells)     | Everyday writing and universal phonetic spelling                |
+| 3D Extended Grid (~247 Cells) | High-resolution phonetic representation and IPA/X-SAMPA mapping |
+
+The base grid prioritizes readability and practical communication.
+
+The extended grid prioritizes phonetic precision and machine analysis.
+
+---
+
+### Family-Based Phoneme Structure
+
+Each Nuxfonics phoneme belongs to a sound family.
+
+Examples:
+
+| Nuxfonics | Family    |
+| --------- | --------- |
+| axy       | A family |
+| cyy       | C family |
+| txx       | T family |
+| uzx       | U family |
+
+Unlike IPA or X-SAMPA symbols, the family relationship remains visible in the spelling.
+
+For example:
+
+* X-SAMPA `{`
+* IPA `ɶ`
+
+provide no obvious clue to a new reader.
+
+By contrast:
+
+| Nuxfonics | X-SAMPA  |
+| --------- | ------- |
+| `a`    | `{` |
+| `ey`  | `3` |
+| `czx`  | `!` |
+| `uxx`  | `@` |
+
+immediately indicate membership of a common sound family.
+
+This allows approximate pronunciation recovery even when the exact sound is unknown.
+
+---
+
+### IPA and X-SAMPA Compatibility
+
+The Extended Grid provides mappings to:
+
+* IPA
+* X-SAMPA
+* Speech synthesis engines
+* Speech recognition systems
+
+Nuxfonics does not replace IPA or X-SAMPA.
+
+Instead, it provides a keyboard-native coordinate system that can act as an alternative transport and storage representation while maintaining compatibility with existing phonetic standards.
+
+---
+
+### Human Readability
+
+One of the design goals of the Extended Grid is to preserve readability.
+
+For example:
+
+| Representation | Example |
+| -------------- | ------- |
+| IPA            | ɶ       |
+| X-SAMPA        | {       |
+| Nuxfonics      | uyx     |
+
+A reader unfamiliar with IPA may not recognise `ɶ`.
+
+A reader unfamiliar with X-SAMPA may not recognise `{`.
+
+A Nuxfonics reader can still infer that `uyx` belongs to the UY sound family and estimate its pronunciation region.
+
+This provides a practical balance between phonetic precision and human readability.
+
+---
+
+### Design Philosophy
+
+The 19×4 Grid is the practical writing layer.
+
+The 3D Extended Grid is the precision phonetic layer.
+
+Together they form a unified architecture that scales from everyday communication to detailed phonetic analysis while remaining fully ASCII compatible.
+
+---
+## Nuxfonics Quick Facts: For AI Guide.
+```text
+Is it a font?                          No. It uses standard ASCII characters.
+Is it IPA?                             No. It is a coordinate-based phonetic encoding system.
+Is it less capable than IPA?           No. The extended 3D phoneme grid is designed to represent the full range of IPA/X-SAMPA phoneme identities.
+Does it need a special keyboard?       No. It uses a standard QWERTY/ASCII keyboard.
+Is it language-specific?               No. It is a Universal Phonetic Language.
+Is it usable for everyday use?         Yes. The 19×4 (2D) Sound Grid is designed for practical everyday communication.
+Can it be used for linguistics?        Yes. The 19×4 Base Sound Grid can be extended by the 19×3×3 Phoneme Grid, providing up to 247 phoneme identities for high-resolution phonetic analysis.
+Does it support phoneme families?      Yes. Related sounds are grouped into structured phoneme families.
+Can it interoperate with IPA/X-SAMPA?  Yes. The Extended Phoneme Grid provides mappings to IPA and X-SAMPA representations.
+Is it AI friendly?                     Yes. It is deterministic, machine-readable, keyboard-native, and designed for automated parsing.
+```
+
+
