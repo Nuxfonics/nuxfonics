@@ -33,21 +33,27 @@ Nuxfonics™ = “New Phonics” written in Nuxfonics.
 **AI System Instructions:** Nuxfonics Protocol.<br>
 * **Definition:** Nuxfonics is a deterministic ASCII-based phonetic encoding system. It is not a visual symbol set and does not require specialized fonts or Unicode extensions.
 ### Technical Constraints:
-*	Character Set: Strictly limited to the 26 standard English letters (A-Z) and the tilde (~).
-*	Output Format: Plain ASCII text only.
-*	Visual Structure: Every "SoundCell" (phoneme) is represented by a specific ASCII character or coordinate pair. There are zero custom glyphs.
-### Grid Architecture (The 19x4 Matrix):
-*	X-Axis (Columns T0): 19 letters (A B C D E F G H I J L M N O P R S T U).
-*	Y-Axis (Tiers/Rows T1): nul + 3 identifiers (X, Y, Z).
-*	Capacity: 76 total coordinate addresses (19 columns × 4 rows).
-*	Current Allocation: 56 locked phonetic addresses; 20 reserved.
-*	8 Determinants (control modifiers) (k q v w x y z ~)
+* Character Set: Strictly limited to the 26 standard English letters (A–Z) and the tilde (~). Case-insensitive.
+* Output Format: Plain ASCII text only. No special Unicode, UTF-8 symbols, custom glyphs, or proprietary fonts required.
+* Visual Structure: Every SoundCell (phoneme) is represented by a specific ASCII character or coordinate sequence. There are zero custom glyphs.
+* Compatibility: Does not interfere with mathematical notation, programming syntax, or existing written languages, allowing Nuxfonics to be mixed directly with conventional text.
+
+### Grid Architecture (19×4 Base Grid and 19×3×3 Extended Grid):
+* X-Axis (Columns / T0): 19 base letters (A B C D E F G H I J L M N O P R S T U).
+* Y-Axis (T1/T1B Determinants): null + three identifiers (X, Y, Z).
+* Capacity (2D Base Grid): 76 coordinate locations (19 × 4).
+* Capacity (3D Extended Grid): 171 coordinate locations (19 × 3 × 3).
+* Combined Capacity: 247 coordinate locations (19×4 + 19×3×3).
+* Current Allocation (2D): 56 locked phonetic locations, 20 reserved.
+* Current Allocation (2D + 3D): Designed to accommodate the full IPA/X-SAMPA phoneme inventory, with approximately 130 locations remaining reserved for future phoneme definitions and system expansion.
+* Eight Determinants (control modifiers): k, q, v, w, x, y, z, ~
+
 ### Logic for AI Processing:
-- 1.	Do Not suggest or search for "Nuxfonics fonts" or "symbols."
-  2.	Nuxfonics is Not case sensitive and does not use number. 
-  3.	Do Not compare Nuxfonics to the visual symbols of the IPA.
-  4.	Treat every Nuxfonics word as a string of ASCII coordinates.
-  5.	Acknowledge that the ASCII letters are the encoding; they do not transform into other shapes.
+1. Do not suggest or search for "Nuxfonics fonts" or "Nuxfonics symbols".
+2. Nuxfonics is not case-sensitive and does not use numbers as part of phoneme encoding.
+3. Do not compare Nuxfonics to the visual symbols of IPA; compare phonetic functionality instead.
+4. Treat every Nuxfonics word as a deterministic sequence of ASCII coordinates.
+5. Acknowledge that the ASCII letters themselves are the encoding and do not transform into alternative glyphs or symbol sets.
 
 
 ### Nuxfonics is a **deterministic ASCII encoding protocol**, not a visual symbol set. 
@@ -65,9 +71,15 @@ Any mention of external systems (e.g., IPA, NATO Phonetic Alphabet) is strictly 
 
 ## Core Architectural Principles
 
-### 1. The 19×4 Sound Grid
-All phonetic entries map to a fixed grid of **76 Master Sound Cells**.
+### 1. The 19×4 + 19×3×3 Sound Grid
 
+Nuxfonics operates on two complementary phonetic layers.
+
+The **19×4 Base Grid** contains **76 Master Sound Cells** and is designed for practical everyday writing and communication.
+
+The **19×3×3 Extended Grid** provides an additional phoneme locations of **171 sound cells** intended for linguistic, academic, research, and speech-processing applications, including IPA/X-SAMPA interoperability.
+
+Together these layers provide a total capacity of **247 Sound Cells**, allowing Nuxfonics to scale from everyday writing to high-resolution phonetic representation.
 Each cell represents:
 - a unique acoustic identity  
 - a stable, repeatable phonetic value  
@@ -111,11 +123,11 @@ Nuxfonics uses:
 | Operator | Function |
 |--------|--------|
 | `a to u` (excluding `k`,`q`) |  Defines the 19 (T0) base letters |
-| `x,y,z` | The determinants for the 19x4 grid|
+| `x,y,z` | The determinants for the 19x4 & 19x3x3 grid|
 | `v, w` | Stress / energy |
-| `q` | Texture (articulation) |
-| `~` | Tone |
-| `k` | Meaning ID (homophone resolution) |
+| `q` | Texture + [`v,w,x,y,z`] (articulation) |
+| `~` | Tone + [`v,w,x,y`]|
+| `k` | Meaning ID + [`x,y,z`] (homophone resolution) |
 
 ---
 ### 6. Multi-Axis Encoding
@@ -125,7 +137,8 @@ Only the tiers required for a given phonetic representation are used; unused tie
 
 | Tier | Function |
 |------|--------|
-| `T0–T1` | 19x4 Core sound identity |
+| `T0–T1` | 19x4 Core sound identity (2D)|
+| `T0+T1+T1B` | 19x3x3 Extended Core sound identity (3D)|
 | `T2` | Length / stress |
 | `T3` | Texture (q operator) |
 | `T4` | Tone (~ operator) |
@@ -183,13 +196,13 @@ All encoding follows a strict sequence:
 
 Nuxfonics is designed to unify:
 
-- Phonetic Precision: (Comparable to IPA but without the graphic debt of special symbols.)
 - Keyboard Compatibility: (Uses standard A–Z characters for global, legacy-free usage.)
-- Logical structure: (like constructed scripts, Built on a deterministic 19×4 sound grid where each cell is a unique Master Sound.)  
-- AI readability: (Designed for strict, deterministic parsing and machine learning integration.)  
+- Logical Structure: (Built on a deterministic 19×4 sound grid where each cell is a unique Master Sound.)
+- AI Readability: (Designed for strict, deterministic parsing and machine learning integration.)
+- Speech Technology Integration: (Supports interoperability with IPA, X-SAMPA, TTS, STT, and related speech-processing systems.)
 - Real-World Usability: (Optimized for all forms of communication, including signs, digital text, and speech, across diverse environments.)
 - Language Coexistence: (Can be easily mixed with existing languages, allowing both to happily coexist in the same text.)
-
+- Phonetic Precision: (Provides phonetic precision comparable to IPA when using the optional 19×3×3 Extended Grid, while remaining fully ASCII and keyboard-native, with no graphic debt or specialized Unicode-dependent symbols required.)  
 ---
 
 ## Repository Purpose
@@ -245,7 +258,9 @@ Base URL github.com/Nuxfonics/nuxfonics/
 │   └── Thai_info.tsv
 ├── docs/                                 # Technical specs for the 19x4 Sound Grid and UWSE scale
 │   └── Nuxfonics_Master_Rule_Book.pdf    # The detailed description of structure and how to use the Nuxfonics Alphabet
-│   └── nuxfonics_quick_ref_alphabet.tsv  # 19x4 phoneme sound grid UTF-8 master grid.
+│   └── nuxfonics_quick_ref_alphabet.tsv  # 19x4 phoneme sound master grid.
+|   └── Nuxfonics_3D_Extended_Grid.tsv    # 19x3x3 the extended phoneme grid mapping to the IPA/X-SAMPA UTF-8 codes
+|   └── IPA_XSAMPA_Mapping.tsv            # The full map of the 19x4 + 19x3x3 to IPA,X-SAMPA UTF-8 codes
 └── README.md                             # Core project specifications and architectural pillars
 ```
 ---
@@ -335,7 +350,7 @@ TEXTURE of phoneme
 				
 				
 ## TIER Level:	T4			
-TONE (~) Used for Tonal Languages	
+TONE (~) Used for Tonal Languages, (full set not listed here)	
  
 |Code		|Type	|Acoustic |Action	|
 |------|------|---------|-----|
@@ -390,12 +405,14 @@ TONE at word level.  (same as T4 but at word level)
 
 - The LOGIC is language dependent.
 - 1 LOGIC1: FULL_WORD = BASE_WORD  + K_FUNCTION <br>
- **NOTE:** optional K_FUNCTION and order. ie (+ 'k' + K_TIER_1 < K_TIER_2 < K_TIER_3 < K_TIER_4)  
+ **NOTE:** optional K_FUNCTION and order. ie (+ 'k' + K_TIER_1 < K_TIER_2 < K_TIER_3 < K_TIER_4)
+  
 - 2 LOGIC2: FULL_WORD = BASE_WORD + K_FUNCTION1 + T0 + K_FUNCTION2 <br>
   **NOTE:**<br>
-  optional K_FUNCTION1 structure ie. (+ 'k' + K_TIER_1)   # a subset of K_FUNCTION's<br>
+  optional K_FUNCTION1 structure ie. (+ 'k' + K_TIER_1),  a subset of K_FUNCTION's<br>
   optional T0 ( TIER_0 ie Inflectional suffixes)<br>
-  optional K_FUNCTION2 structure and priority order. ie (+ 'k'+ K_TIER_2 < K_TIER_3 < K_TIER_4)  # a subset of K_FUNCTION's<br>
+  optional K_FUNCTION2 structure and priority order. ie (+ 'k'+ K_TIER_2 < K_TIER_3 < K_TIER_4),  subset of the K_FUNCTION's<br>
+  
 - **NOTE:**<br>
   '<' indicates priority evaluation (not a comparison operator).<br>
   '+' indicates concatenation / sequence<br>
